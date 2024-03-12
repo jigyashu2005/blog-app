@@ -1,0 +1,23 @@
+
+<%- include("partials/header"); -%>
+    <h1><a href="/">Home</a></h1>
+    <!-- <p> header </p> -->
+
+
+  <%  posts.forEach(post=> { %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content+ " ..."%> 
+    <a href="/posts/<%=post._id%>">Read More</a>
+    <a href="/posts/edit/<%=post._id%>">edit</a>
+    </p>
+
+
+    <% }) %>
+
+  <form class="" action="/compose" method="get">
+    
+    <button class="btn btn-primary" type="submit" name="button">Write new blog </button>
+  </form>
+<%- include("partials/footer"); -%>
